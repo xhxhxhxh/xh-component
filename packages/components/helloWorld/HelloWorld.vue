@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-interface Props {
+defineOptions({
+  name: 'ELHelloWorld',
+})
+
+type Props = {
   color?: string
   msg?: string
 }
@@ -15,11 +19,11 @@ const count = ref(0)
 </script>
 
 <template>
-  <h1 :style="{color}">{{ msg }}</h1>
+  <h1 :style="{color}" class="read-the-docs">{{ msg }}</h1>
 
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .read-the-docs {
   color: #888;
 }

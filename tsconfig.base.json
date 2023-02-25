@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "composite": true,
+    "noEmit": true,
+    "paths": {
+      "@xh-component/*": ["packages/*"]
+    },
+    "types": ["unplugin-vue-define-options/macros-global"]
+  },
+}

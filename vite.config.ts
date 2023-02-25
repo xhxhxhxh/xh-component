@@ -6,19 +6,25 @@ import DefineOptions from "unplugin-vue-define-options/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), dts({
-    entryRoot: "src",
-    outputDir: ["./dist/es", "./dist/lib"],
-    tsConfigFilePath: "tsconfig.json",
-  }), DefineOptions()],
+  plugins: [
+    vue(),
+    dts({
+      entryRoot: "packages",
+      outputDir: ["packages/xh-component/es", "packages/xh-component/lib"],
+      tsConfigFilePath: "tsconfig.packages.json",
+      noEmitOnError: true
+    }),
+    DefineOptions(),
+  ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
+      '@': resolve(__dirname, 'packages')
     }
   },
   build: {
     sourcemap: true,
     minify: false,
+    // cssCodeSplit: true,
     rollupOptions: {
       // 忽略打包vue文件
       external: ["vue"],
@@ -31,8 +37,8 @@ export default defineConfig({
           // 让打包目录和我们目录对应
           exports: "named",
           // 配置打包根目录
-          dir: "dist",
-          name: 'index',
+          dir: "packages/xh-component",
+          name: 'xhComponent',
           globals: {
             vue: "Vue",
           },
@@ -44,9 +50,8 @@ export default defineConfig({
           entryFileNames: "[name].mjs",
           // 让打包目录和我们目录对应
           preserveModules: true,
-          exports: "named",
           // 配置打包根目录
-          dir: "./dist/es",
+          dir: "packages/xh-component/es",
         },
         {
           // 打包格式
@@ -57,12 +62,12 @@ export default defineConfig({
           preserveModules: true,
           exports: "named",
           // 配置打包根目录
-          dir: "dist/lib",
+          dir: "packages/xh-component/lib",
         },
       ],
     },
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(__dirname, 'packages/index.ts'),
       name: 'xh-component',
     },
   }

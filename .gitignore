@@ -10,6 +10,8 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+packages/xh-component/**
+!packages/xh-component/package.json
 *.local
 
 # Editor directories and files
