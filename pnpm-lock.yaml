@@ -9,6 +9,8 @@ importers:
       '@typescript-eslint/parser': ^5.53.0
       '@vitejs/plugin-vue': ^4.0.0
       '@vue/runtime-core': ^3.2.47
+      '@xh-component/components': workspace:*
+      '@xh-component/utils': workspace:*
       eslint: ^8.34.0
       eslint-plugin-vue: ^9.9.0
       postcss: ^8.4.21
@@ -21,8 +23,12 @@ importers:
       vite-plugin-dts: 2.0.0-beta.3
       vue: ^3.2.45
       vue-tsc: ^1.0.24
+      xh-component: workspace:*
     dependencies:
+      '@xh-component/components': link:packages/components
+      '@xh-component/utils': link:packages/utils
       vue: 3.2.47
+      xh-component: link:packages/xh-component
     devDependencies:
       '@types/node': 18.14.0
       '@typescript-eslint/eslint-plugin': 5.53.0_ny4s7qc6yg74faf3d6xty2ofzy
@@ -40,6 +46,15 @@ importers:
       vite: 4.1.3_hlkwzk2izwsolfmdrejei4vrty
       vite-plugin-dts: 2.0.0-beta.3_p5hrhorwe35jeumio2pz6ujxge
       vue-tsc: 1.1.5_typescript@4.9.5
+
+  packages/components:
+    specifiers: {}
+
+  packages/utils:
+    specifiers: {}
+
+  packages/xh-component:
+    specifiers: {}
 
 packages:
 

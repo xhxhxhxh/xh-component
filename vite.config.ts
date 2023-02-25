@@ -4,13 +4,18 @@ import { resolve } from 'path';
 import dts from "vite-plugin-dts";
 import DefineOptions from "unplugin-vue-define-options/vite";
 
+const baseBuildDir = 'packages/xh-component'
+const getTargetDir = (dir: string) => {
+  return resolve(baseBuildDir, dir)
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     dts({
       entryRoot: "packages",
-      outputDir: ["packages/xh-component/es", "packages/xh-component/lib"],
+      outputDir: [getTargetDir('es'), getTargetDir('lib')],
       tsConfigFilePath: "tsconfig.packages.json",
       noEmitOnError: true
     }),
@@ -18,7 +23,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'packages')
+      // '@': resolve(__dirname, 'packages')
     }
   },
   build: {
@@ -37,7 +42,7 @@ export default defineConfig({
           // 让打包目录和我们目录对应
           exports: "named",
           // 配置打包根目录
-          dir: "packages/xh-component",
+          dir: getTargetDir('dist'),
           name: 'xhComponent',
           globals: {
             vue: "Vue",
@@ -51,7 +56,7 @@ export default defineConfig({
           // 让打包目录和我们目录对应
           preserveModules: true,
           // 配置打包根目录
-          dir: "packages/xh-component/es",
+          dir: getTargetDir('es'),
         },
         {
           // 打包格式
@@ -62,7 +67,7 @@ export default defineConfig({
           preserveModules: true,
           exports: "named",
           // 配置打包根目录
-          dir: "packages/xh-component/lib",
+          dir: getTargetDir('lib'),
         },
       ],
     },

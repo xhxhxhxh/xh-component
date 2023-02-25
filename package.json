@@ -1,26 +1,16 @@
 {
-  "name": "xh-component",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/xh-component.js",
-  "module": "./dist/xh-component.mjs",
-  "exports": {
-    ".": {
-      "import": "./dist/xh-component.mjs",
-      "require": "./dist/xh-component.js"
-    }
-  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "xh-component": "workspace:*",
+    "@xh-component/utils": "workspace:*",
+    "@xh-component/components": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^18.14.0",

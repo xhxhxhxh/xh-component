@@ -16,7 +16,7 @@
     "composite": true,
     "noEmit": true,
     "paths": {
-      "@xh-component/*": ["packages/*"]
+      // "@xh-component/*": ["packages/*"]
     },
     "types": ["unplugin-vue-define-options/macros-global"]
   },
