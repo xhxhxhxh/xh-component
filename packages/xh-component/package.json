@@ -1,15 +1,10 @@
 {
   "name": "xh-component",
   "version": "1.0.0",
-  "description": "",
+  "description": "A component library build demo",
   "type": "module",
   "main": "./lib/index.js",
   "module": "./es/index.mjs",
-  "files": [
-    "dist",
-    "es",
-    "lib"
-  ],
   "exports": {
     ".": {
       "import": "./es/index.mjs",
@@ -20,7 +15,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:xhxhxhxh/xh-component.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "component library",
+    "build",
+    "demo",
+    "vue3"
+  ],
   "author": "",
   "license": "ISC"
 }
