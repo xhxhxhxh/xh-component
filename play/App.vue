@@ -5,6 +5,7 @@ import { ref } from 'vue'
 
 <template>
   <!-- <ELHelloWorld msg="Vite + Vue" /> -->
-  <ELHelloWorld :msg="'hello'">helloWorld</ELHelloWorld>
+  <ELHelloWorld :msg="'hello'"></ELHelloWorld>
+  <ELHelloWorld2 :msg="'world'"></ELHelloWorld2>
 </template>
 
