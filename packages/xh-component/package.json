@@ -5,6 +5,11 @@
   "type": "module",
   "main": "./lib/index.js",
   "module": "./es/index.mjs",
+  "files": [
+    "dist",
+    "es",
+    "lib"
+  ],
   "exports": {
     ".": {
       "import": "./es/index.mjs",
