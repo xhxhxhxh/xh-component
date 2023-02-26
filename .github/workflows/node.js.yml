@@ -44,7 +44,7 @@ jobs:
           ${{ runner.os }}-pnpm-store-
 
     - name: Install dependencies
-      run: pnpm i --frozen-lockfile
+      run: pnpm install
     
   publish-npm:
     needs: build
@@ -58,7 +58,7 @@ jobs:
 
       - name: move to package dir
         run: cd ./packages/xh-component
-        
+
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.xh_component}}
