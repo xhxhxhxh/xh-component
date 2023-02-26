@@ -56,9 +56,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org
 
-      - name: move to package dir
-        run: cd ./packages/xh-component
-
-      - run: npm publish
+      - name: Build&publish
+        run: sh ./scripts/publish.sh
         env:
           NODE_AUTH_TOKEN: ${{secrets.xh_component}}
