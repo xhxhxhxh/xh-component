@@ -1,6 +1,6 @@
 {
   "name": "xh-component",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A component library build demo",
   "type": "module",
   "main": "./lib/index.js",

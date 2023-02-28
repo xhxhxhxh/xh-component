@@ -17,13 +17,13 @@ export default defineConfig({
       entryRoot: "packages",
       outputDir: [getTargetDir('es'), getTargetDir('lib')],
       tsConfigFilePath: "tsconfig.packages.json",
-      noEmitOnError: true
     }),
     DefineOptions(),
   ],
   resolve: {
     alias: {
-      // '@': resolve(__dirname, 'packages')
+      '@xh-component/utils': resolve(__dirname, 'packages/utils'),
+      '@xh-component/components': resolve(__dirname, 'packages/components')
     }
   },
   build: {
