@@ -4,8 +4,8 @@
 name: build-and-publish
 
 on:
-  release:
-    types: [published]
+  tags:
+    - v[0-9]+.*
 
 jobs:
   build-publish-npm:
